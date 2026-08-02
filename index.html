@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f0e7" />
+    <meta
+      name="description"
+      content="A personal website featuring an about page, résumé, journal, and contact information."
+    />
+    <title>About | Personal Page</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body data-page="about">
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" data-page="about" href="#about">ABOUT</a></li>
+          <li><a class="nav-link" data-page="resume" href="#resume">RESUME</a></li>
+          <li><a class="nav-link" data-page="journal" href="#journal">JOURNAL</a></li>
+          <li><a class="nav-link" data-page="contact" href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-shell" aria-live="polite">
+      <section class="page-view" id="about" aria-label="About" data-title="About">
+        <div class="page-content"></div>
+      </section>
+
+      <section
+        class="page-view"
+        id="resume"
+        aria-labelledby="resume-title"
+        data-title="Resume"
+        hidden
+      >
+        <div class="page-content resume-content">
+          <header class="resume-heading">
+            <h1 class="resume-title" id="resume-title">Resume</h1>
+          </header>
+
+          <nav class="resume-subnav" aria-label="Resume sections">
+            <ul class="resume-subnav-list">
+              <li><a class="resume-nav-link" data-section="education" href="#resume/education">EDUCATION</a></li>
+              <li><a class="resume-nav-link" data-section="experience" href="#resume/experience">EXPERIENCE</a></li>
+              <li><a class="resume-nav-link" data-section="competitions" href="#resume/competitions">COMPETITIONS</a></li>
+              <li><a class="resume-nav-link" data-section="projects" href="#resume/projects">PROJECTS</a></li>
+              <li><a class="resume-nav-link" data-section="skills" href="#resume/skills">SKILLS</a></li>
+              <li><a class="resume-nav-link" data-section="courses" href="#resume/courses">COURSES</a></li>
+            </ul>
+          </nav>
+
+          <div class="resume-sections">
+            <section class="resume-section" id="education" aria-labelledby="education-title">
+              <h2 class="resume-section-title" id="education-title">EDUCATION</h2>
+              <div class="resume-section-content resume-timeline education-timeline">
+                <div class="timeline-item">
+                  <p class="timeline-date">2023 – 2027</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details education-entry">
+                    <h3 class="education-degree">
+                      B.S. Data Science and Big Data Technology (NLP and Financial Big Data)
+                    </h3>
+                    <p class="education-school">
+                      <a
+                        class="resume-link"
+                        href="https://www.shisu.edu.cn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Shanghai International Studies University</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="resume-section" id="experience" aria-labelledby="experience-title">
+              <h2 class="resume-section-title" id="experience-title">EXPERIENCE</h2>
+              <div class="resume-section-content resume-timeline">
+                <div class="timeline-item">
+                  <p class="timeline-date">2026.5 – 2026.8</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details">
+                    <h3 class="experience-company">
+                      <a
+                        class="resume-link"
+                        href="https://www.wuxiapptec.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Wuxi AppTec</a>
+                    </h3>
+                    <p class="experience-role">
+                      Business Analysis &amp; Agent Development Intern (Drug R&amp;D)
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <p class="timeline-date">2025.7 – 2025.9</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details">
+                    <h3 class="experience-company">
+                      <a
+                        class="resume-link"
+                        href="https://mro.terminexus.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Terminexus</a>
+                    </h3>
+                    <p class="experience-role">
+                      Data Analysis Intern (E-commerce)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="resume-section" id="competitions" aria-labelledby="competitions-title">
+              <h2 class="resume-section-title" id="competitions-title">COMPETITIONS</h2>
+              <div class="resume-section-content resume-timeline">
+                <div class="timeline-item">
+                  <p class="timeline-date">2025.3 – 2025.8</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details competition-entry">
+                    <h3 class="competition-title">
+                      The 11th National University Student Statistical Modeling Competition, Second Prize.
+                    </h3>
+                    <p class="competition-organizer">
+                      Statistical Education Society of China
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="resume-section" id="projects" aria-labelledby="projects-title">
+              <h2 class="resume-section-title" id="projects-title">PROJECTS</h2>
+              <div class="resume-section-content"></div>
+            </section>
+
+            <section class="resume-section" id="skills" aria-labelledby="skills-title">
+              <h2 class="resume-section-title" id="skills-title">SKILLS</h2>
+              <div class="resume-section-content"></div>
+            </section>
+
+            <section class="resume-section" id="courses" aria-labelledby="courses-title">
+              <h2 class="resume-section-title" id="courses-title">COURSES</h2>
+              <div class="resume-section-content"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-view" id="journal" aria-label="Journal" data-title="Journal" hidden>
+        <div class="page-content"></div>
+      </section>
+
+      <section
+        class="page-view"
+        id="contact"
+        aria-labelledby="contact-title"
+        data-title="Contact"
+        hidden
+      >
+        <div class="page-content contact-content">
+          <div class="contact-card">
+            <h1 class="contact-title" id="contact-title">Get in Touch with Me</h1>
+            <p class="contact-via">via</p>
+            <a class="contact-email" href="mailto:Yuyao.Huang2027@outlook.com">
+              Yuyao.Huang2027@outlook.com
+            </a>
+            <p class="contact-note">Usually respond within 24 hours</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
