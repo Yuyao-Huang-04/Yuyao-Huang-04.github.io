@@ -30,16 +30,6 @@ body {
   line-height: 1.6;
 }
 
-body::before {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: linear-gradient(rgba(88, 61, 48, 0.025) 1px, transparent 1px);
-  background-size: 100% 32px;
-  content: "";
-  pointer-events: none;
-}
-
 .site-header {
   position: fixed;
   top: 0;
