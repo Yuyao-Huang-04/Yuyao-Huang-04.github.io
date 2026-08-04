@@ -818,6 +818,7 @@ body {
 
   .home-portrait-frame {
     width: min(70vw, 240px);
+    order: -1;
     justify-self: center;
     border-radius: 14px;
   }
