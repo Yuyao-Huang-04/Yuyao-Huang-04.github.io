@@ -8,12 +8,20 @@
       name="description"
       content="A personal website featuring an about page, résumé, journal, and contact information."
     />
-    <title>About | Personal Page</title>
+    <title>Home | Personal Page</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
-  <body data-page="about">
+  <body data-page="home">
     <header class="site-header">
+      <a class="home-button" href="#home" aria-label="Return to the home page" title="Home">
+        <img
+          class="home-button-image"
+          src="assets/images/hyy-home-logo.png"
+          alt=""
+        />
+      </a>
+
       <nav class="site-nav" aria-label="Primary navigation">
         <ul class="nav-list">
           <li><a class="nav-link" data-page="about" href="#about">ABOUT</a></li>
@@ -25,7 +33,37 @@
     </header>
 
     <main class="page-shell" aria-live="polite">
-      <section class="page-view" id="about" aria-label="About" data-title="About">
+      <section class="page-view" id="home" aria-label="Home" data-title="Home">
+        <div class="page-content home-content">
+          <div class="home-hero">
+            <div class="home-intro">
+              <h1 class="home-name">
+                <span class="home-name-en">Yuyao Huang</span>
+                <span class="home-name-cn" lang="zh-CN">黄宇遥</span>
+              </h1>
+              <p class="home-bio">
+                I am a senior student at Shanghai International Studies University, majoring in Data Science and Big Data Technology. My areas of interest are NLP, geographic data science and fintech. I will be pursuing my master's degree in Hong Kong or Singapore in 2027.
+              </p>
+              <div class="home-actions" aria-label="Home page links">
+                <a class="home-action home-action-primary" href="#about">ABOUT ME</a>
+                <a class="home-action home-action-secondary" href="#resume">
+                  <span>VIEW RESUME</span>
+                  <span class="home-action-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+            <figure class="home-portrait-frame">
+              <img
+                class="home-portrait"
+                src="assets/images/yuyao-huang-portrait.jpg"
+                alt="Portrait of Yuyao Huang"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-view" id="about" aria-label="About" data-title="About" hidden>
         <div class="page-content"></div>
       </section>
 

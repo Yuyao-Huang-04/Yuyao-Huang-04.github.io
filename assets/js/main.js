@@ -3,7 +3,7 @@ const resumeNavigationLinks = document.querySelectorAll(".resume-nav-link");
 const resumeSections = document.querySelectorAll(".resume-section");
 const pageViews = document.querySelectorAll(".page-view");
 const resumeView = document.getElementById("resume");
-const fallbackPage = "about";
+const fallbackPage = "home";
 const availablePages = new Set(
   Array.from(pageViews, (view) => view.id)
 );
