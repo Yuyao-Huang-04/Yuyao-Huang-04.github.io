@@ -283,6 +283,16 @@ body::before {
   letter-spacing: 0.015em;
 }
 
+.experience-description {
+  max-width: 820px;
+  margin: 14px 0 0;
+  color: var(--text);
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(1rem, 1.7vw, 1.14rem);
+  letter-spacing: 0.005em;
+  line-height: 1.55;
+}
+
 .resume-link {
   color: inherit;
   text-decoration-color: var(--accent-soft);
@@ -568,36 +578,42 @@ body::before {
   }
 
   .site-header {
-    padding: 14px 16px;
+    padding: 12px 10px;
   }
 
   .nav-list {
-    gap: 8px 18px;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: clamp(8px, 3.2vw, 14px);
   }
 
   .nav-link {
-    font-size: 0.7rem;
-    letter-spacing: 0.11em;
+    padding: 8px 0;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
   }
 
   .page-shell {
-    width: calc(100% - 24px);
+    width: calc(100% - 16px);
     min-height: calc(100vh - var(--header-height));
     padding: 0;
   }
 
   .resume-content {
-    padding: 38px 0 70px;
+    padding: 30px 0 56px;
   }
 
   .resume-title {
-    font-size: clamp(2.7rem, 14vw, 4rem);
+    font-size: clamp(2.6rem, 13vw, 3.5rem);
   }
 
   .resume-subnav {
-    margin: 26px 0 30px;
-    padding: 13px 0;
+    min-height: 52px;
+    margin: 22px 0 24px;
+    padding: 12px 0;
     overflow-x: auto;
+    scroll-padding-inline: 14px;
     scrollbar-width: none;
   }
 
@@ -607,72 +623,111 @@ body::before {
 
   .resume-subnav-list {
     width: max-content;
-    gap: 20px;
-    padding: 0 20px;
+    gap: 18px;
+    padding: 0 14px;
     justify-content: flex-start;
   }
 
   .resume-nav-link {
-    font-size: 0.68rem;
+    font-size: 0.65rem;
   }
 
   .resume-sections {
-    gap: 22px;
+    gap: 16px;
   }
 
   .resume-section {
-    min-height: 300px;
-    padding: 24px;
-    border-radius: 16px;
+    min-height: 260px;
+    padding: 20px 18px;
+    border-radius: 14px;
   }
 
   .resume-section-content {
-    min-height: 205px;
+    min-height: 185px;
+  }
+
+  .resume-timeline,
+  .courses-content {
+    padding-top: 28px;
   }
 
   .education-degree,
   .experience-company,
   .competition-title {
-    font-size: clamp(1.05rem, 5vw, 1.35rem);
+    font-size: clamp(1.08rem, 5.2vw, 1.28rem);
+    line-height: 1.28;
     white-space: normal;
   }
 
-  .timeline-item {
-    --timeline-title-half-line: clamp(0.6825rem, 3.25vw, 0.8775rem);
+  .education-school,
+  .experience-role,
+  .competition-organizer {
+    margin-top: 10px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
 
-    min-height: 116px;
-    grid-template-columns: 108px 16px 1fr;
-    column-gap: 10px;
+  .experience-description {
+    margin-top: 12px;
+    font-size: 0.98rem;
+    line-height: 1.48;
+  }
+
+  .timeline-item {
+    --timeline-title-half-line: clamp(0.69rem, 3.33vw, 0.82rem);
+
+    min-height: 108px;
+    grid-template-columns: 82px 14px minmax(0, 1fr);
+    column-gap: 8px;
   }
 
   .timeline-marker {
-    min-height: 116px;
+    min-height: 108px;
   }
 
   .timeline-date {
-    font-size: 0.88rem;
-    padding-top: calc(var(--timeline-title-half-line) - 0.572rem);
+    padding-top: calc(var(--timeline-title-half-line) - 0.494rem);
+    font-size: 0.76rem;
+    letter-spacing: -0.015em;
+  }
+
+  .timeline-details {
+    min-width: 0;
+    min-height: 90px;
+    overflow-wrap: break-word;
   }
 
   .skills-timeline .timeline-item {
-    --timeline-title-half-line: 1rem;
+    --timeline-title-half-line: 0.92rem;
   }
 
   .skill-category {
-    padding-top: calc(var(--timeline-title-half-line) - 0.55rem);
+    padding-top: calc(var(--timeline-title-half-line) - 0.456rem);
+    font-size: 0.76rem;
+    line-height: 1.2;
   }
 
   .skill-tags {
-    gap: 9px;
+    gap: 7px;
   }
 
   .skill-tag {
-    padding: 7px 11px;
-    font-size: 0.9rem;
+    padding: 6px 9px;
+    font-size: 0.86rem;
   }
 
   .course-group {
-    padding: 20px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .course-group + .course-group {
+    margin-top: 18px;
+  }
+
+  .course-group-title {
+    margin-bottom: 14px;
+    font-size: 1.18rem;
   }
 
   .course-list {
@@ -680,22 +735,49 @@ body::before {
   }
 
   .course-item {
-    font-size: 0.96rem;
+    min-height: 44px;
+    padding: 10px 0 10px 15px;
+    font-size: 0.92rem;
   }
 
   .contact-content {
     min-height: calc(100vh - var(--header-height));
-    padding: 22px 0;
+    padding: 16px 0;
   }
 
   .contact-card {
-    min-height: 350px;
-    padding: 42px 16px;
-    border-radius: 18px;
+    min-height: 320px;
+    padding: 36px 12px;
+    border-radius: 16px;
   }
 
   .contact-title {
-    font-size: clamp(1.25rem, 6.2vw, 2rem);
+    font-size: clamp(1.2rem, 6vw, 1.8rem);
+  }
+
+  .contact-via {
+    margin-top: 14px;
+  }
+
+  .contact-note {
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .resume-section {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 76px 12px minmax(0, 1fr);
+    column-gap: 6px;
+  }
+
+  .timeline-date,
+  .skill-category {
+    font-size: 0.72rem;
   }
 }
 
