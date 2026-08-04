@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f0e7" />
+    <meta
+      name="description"
+      content="A personal website featuring an about page, résumé, journal, and contact information."
+    />
+    <title>Home | Personal Page</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body data-page="home">
+    <header class="site-header">
+      <a class="home-button" href="#home" aria-label="Return to the home page" title="Home">
+        <img
+          class="home-button-image"
+          src="assets/images/hyy-home-logo.png"
+          alt=""
+        />
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" data-page="about" href="#about">ABOUT</a></li>
+          <li><a class="nav-link" data-page="resume" href="#resume">RESUME</a></li>
+          <li><a class="nav-link" data-page="journal" href="#journal">JOURNAL</a></li>
+          <li><a class="nav-link" data-page="contact" href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-shell" aria-live="polite">
+      <section class="page-view" id="home" aria-label="Home" data-title="Home">
+        <div class="page-content home-content">
+          <div class="home-hero">
+            <div class="home-intro">
+              <h1 class="home-name">
+                <span class="home-name-en">Yuyao Huang</span>
+                <span class="home-name-cn" lang="zh-CN">黄宇遥</span>
+              </h1>
+              <p class="home-bio">
+                I am a senior student at Shanghai International Studies University, majoring in Data Science and Big Data Technology. My areas of interest are NLP, geographic data science and fintech. I will be pursuing my master's degree in Hong Kong or Singapore in 2027.
+              </p>
+              <div class="home-actions" aria-label="Home page links">
+                <a class="home-action home-action-primary" href="#about">ABOUT ME</a>
+                <a class="home-action home-action-secondary" href="#resume">
+                  <span>VIEW RESUME</span>
+                  <span class="home-action-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+            <figure class="home-portrait-frame">
+              <img
+                class="home-portrait"
+                src="assets/images/yuyao-huang-portrait.jpg"
+                alt="Portrait of Yuyao Huang"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-view" id="about" aria-label="About" data-title="About" hidden>
+        <div class="page-content"></div>
+      </section>
+
+      <section
+        class="page-view"
+        id="resume"
+        aria-labelledby="resume-title"
+        data-title="Resume"
+        hidden
+      >
+        <div class="page-content resume-content">
+          <header class="resume-heading">
+            <h1 class="resume-title" id="resume-title">Resume</h1>
+          </header>
+
+          <nav class="resume-subnav" aria-label="Resume sections">
+            <ul class="resume-subnav-list">
+              <li><a class="resume-nav-link" data-section="education" href="#resume/education">EDUCATION</a></li>
+              <li><a class="resume-nav-link" data-section="experience" href="#resume/experience">EXPERIENCE</a></li>
+              <li><a class="resume-nav-link" data-section="competitions" href="#resume/competitions">COMPETITIONS</a></li>
+              <li><a class="resume-nav-link" data-section="projects" href="#resume/projects">PROJECTS</a></li>
+              <li><a class="resume-nav-link" data-section="skills" href="#resume/skills">SKILLS</a></li>
+              <li><a class="resume-nav-link" data-section="courses" href="#resume/courses">COURSES</a></li>
+            </ul>
+          </nav>
+
+          <div class="resume-sections">
+            <section class="resume-section" id="education" aria-labelledby="education-title">
+              <h2 class="resume-section-title" id="education-title">EDUCATION</h2>
+              <div class="resume-section-content resume-timeline education-timeline">
+                <div class="timeline-item">
+                  <p class="timeline-date">2023 – 2027</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details education-entry">
+                    <h3 class="education-degree">
+                      B.S. Data Science and Big Data Technology (NLP and Financial Big Data)
+                    </h3>
+                    <p class="education-school">
+                      <a
+                        class="resume-link"
+                        href="https://www.shisu.edu.cn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Shanghai International Studies University</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="resume-section" id="experience" aria-labelledby="experience-title">
+              <h2 class="resume-section-title" id="experience-title">EXPERIENCE</h2>
+              <div class="resume-section-content resume-timeline">
+                <div class="timeline-item">
+                  <p class="timeline-date">2026.5 – 2026.8</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details">
+                    <h3 class="experience-company">
+                      <a
+                        class="resume-link"
+                        href="https://www.wuxiapptec.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Wuxi AppTec</a>
+                    </h3>
+                    <p class="experience-role">
+                      Business Analysis &amp; Agent Development Intern (Drug R&amp;D)
+                    </p>
+                    <p class="experience-description">
+                      Conducted biotech and pharmaceutical R&amp;D business analysis, extracted and structured company data, developed text-mining and clustering models, supported the optimization of AI agent harnesses and workflows, and built interactive Power BI dashboards to visualize biotech and pharmaceutical R&amp;D profiles and generate actionable business insights.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <p class="timeline-date">2025.7 – 2025.9</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details">
+                    <h3 class="experience-company">
+                      <a
+                        class="resume-link"
+                        href="https://mro.terminexus.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Terminexus</a>
+                    </h3>
+                    <p class="experience-role">
+                      Data Analysis Intern (E-commerce)
+                    </p>
+                    <p class="experience-description">
+                      Developed Python-based web scrapers using BeautifulSoup and Selenium to automate product and material data collection, cleaned and organized order and inventory datasets and performed preliminary statistical analysis using Pandas, Excel functions, and pivot tables, and applied regression and clustering models to identify customer segments, behavioral patterns, and potential business opportunities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="resume-section" id="competitions" aria-labelledby="competitions-title">
+              <h2 class="resume-section-title" id="competitions-title">COMPETITIONS</h2>
+              <div class="resume-section-content resume-timeline">
+                <div class="timeline-item">
+                  <p class="timeline-date">2026.4 – 2026.6</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details competition-entry">
+                    <h3 class="competition-title">
+                      The 16th MathorCup Mathematical Application Challenge, First Prize.
+                    </h3>
+                    <p class="competition-organizer">
+                      <a
+                        class="resume-link"
+                        href="http://www.scope.org.cn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Chinese Society of Optimization, Overall Planning and Economic Mathematics</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <p class="timeline-date">2026.1 – 2026.4</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details competition-entry">
+                    <h3 class="competition-title">
+                      The 16th National University Student Market Research and Analysis Competition (Zhengda Cup), First Prize.
+                    </h3>
+                    <p class="competition-organizer">
+                      <a
+                        class="resume-link"
+                        href="http://www.china-cssc.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Commerce Statistical Society of China</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <p class="timeline-date">2025.3 – 2025.8</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details competition-entry">
+                    <h3 class="competition-title">
+                      The 11th National University Student Statistical Modeling Competition, Second Prize.
+                    </h3>
+                    <p class="competition-organizer">
+                      <a
+                        class="resume-link"
+                        href="http://tjjmds.ai-learning.net/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >Statistical Education Society of China</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="resume-section" id="projects" aria-labelledby="projects-title">
+              <h2 class="resume-section-title" id="projects-title">PROJECTS</h2>
+              <div class="resume-section-content projects-placeholder-content">
+                <p class="projects-placeholder">TO BE UPDATED...</p>
+              </div>
+            </section>
+
+            <section class="resume-section" id="skills" aria-labelledby="skills-title">
+              <h2 class="resume-section-title" id="skills-title">SKILLS</h2>
+              <div class="resume-section-content resume-timeline skills-timeline">
+                <div class="timeline-item">
+                  <p class="timeline-date skill-category">Languages &amp; Softwares</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details">
+                    <ul class="skill-tags" aria-label="Languages and software skills">
+                      <li class="skill-tag">Python</li>
+                      <li class="skill-tag">R</li>
+                      <li class="skill-tag">SQL (MySQL, PostgreSQL)</li>
+                      <li class="skill-tag">MATLAB</li>
+                      <li class="skill-tag">Visual Basic</li>
+                      <li class="skill-tag">Excel (VBA)</li>
+                      <li class="skill-tag">Power BI (DAX)</li>
+                      <li class="skill-tag">AntConc</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <p class="timeline-date skill-category">Stats, DS, ML &amp; AI Libraries</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details">
+                    <ul
+                      class="skill-tags"
+                      aria-label="Statistics, data science, machine learning, and AI libraries"
+                    >
+                      <li class="skill-tag">NumPy</li>
+                      <li class="skill-tag">pandas</li>
+                      <li class="skill-tag">SciPy</li>
+                      <li class="skill-tag">statsmodels</li>
+                      <li class="skill-tag">Matplotlib</li>
+                      <li class="skill-tag">Seaborn</li>
+                      <li class="skill-tag">Plotly</li>
+                      <li class="skill-tag">GeoPandas</li>
+                      <li class="skill-tag">scikit-learn</li>
+                      <li class="skill-tag">XGBoost</li>
+                      <li class="skill-tag">LightGBM</li>
+                      <li class="skill-tag">SHAP</li>
+                      <li class="skill-tag">TensorFlow</li>
+                      <li class="skill-tag">PyTorch</li>
+                      <li class="skill-tag">Transformers</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <p class="timeline-date skill-category">LLM Applications &amp; Agent Engineering</p>
+                  <span class="timeline-marker" aria-hidden="true"></span>
+                  <div class="timeline-details">
+                    <ul
+                      class="skill-tags"
+                      aria-label="LLM application and agent engineering skills"
+                    >
+                      <li class="skill-tag">Codex</li>
+                      <li class="skill-tag">LLM APIs</li>
+                      <li class="skill-tag">AI Agents</li>
+                      <li class="skill-tag">Prompt Engineering</li>
+                      <li class="skill-tag">RAG</li>
+                      <li class="skill-tag">Context Compact</li>
+                      <li class="skill-tag">Harness Engineering</li>
+                      <li class="skill-tag">Subagent</li>
+                      <li class="skill-tag">Hooks</li>
+                      <li class="skill-tag">Agent Skill</li>
+                      <li class="skill-tag">Agent Memory</li>
+                      <li class="skill-tag">Task Orchestration</li>
+                      <li class="skill-tag">Multi-Agent Systems (Still learning)</li>
+                      <li class="skill-tag">MCP (Still learning)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="resume-section" id="courses" aria-labelledby="courses-title">
+              <h2 class="resume-section-title" id="courses-title">COURSES</h2>
+              <div class="resume-section-content courses-content">
+                <section class="course-group" aria-labelledby="mathematics-statistics-title">
+                  <h3 class="course-group-title" id="mathematics-statistics-title">
+                    Mathematics &amp; Statistics
+                  </h3>
+                  <ul class="course-list">
+                    <li class="course-item">Calculus I &amp; II</li>
+                    <li class="course-item">Linear Algebra</li>
+                    <li class="course-item">Probability Theory</li>
+                    <li class="course-item">Mathematical Statistics</li>
+                    <li class="course-item">Statistics</li>
+                    <li class="course-item">College Physics</li>
+                    <li class="course-item">Stochastic Processes</li>
+                    <li class="course-item">Operations Research and Optimization Methods</li>
+                    <li class="course-item">Mathematical Modeling</li>
+                  </ul>
+                </section>
+
+                <section class="course-group" aria-labelledby="computers-ai-title">
+                  <h3 class="course-group-title" id="computers-ai-title">
+                    Computers &amp; Artificial Intelligence
+                  </h3>
+                  <ul class="course-list">
+                    <li class="course-item">Python Programming</li>
+                    <li class="course-item">Introduction to Data Science</li>
+                    <li class="course-item">Data Science Technology and Applications</li>
+                    <li class="course-item">Introduction to Artificial Intelligence</li>
+                    <li class="course-item">Discrete Mathematics</li>
+                    <li class="course-item">Data Structures and Algorithms</li>
+                    <li class="course-item">Data Mining and Analysis</li>
+                    <li class="course-item">Data Visualization</li>
+                    <li class="course-item">Computer Networks</li>
+                    <li class="course-item">Programming Training</li>
+                    <li class="course-item">Database Principles and Applications</li>
+                    <li class="course-item">Corpus and Language Processing Training</li>
+                    <li class="course-item">Machine Learning</li>
+                    <li class="course-item">Natural Language Processing Principles &amp; Training</li>
+                    <li class="course-item">Methods and Techniques in Corpus Research</li>
+                    <li class="course-item">Parallel and Distributed Computing</li>
+                    <li class="course-item">Statistical and Big Data Analysis Software</li>
+                  </ul>
+                </section>
+
+                <section class="course-group" aria-labelledby="finance-economics-title">
+                  <h3 class="course-group-title" id="finance-economics-title">
+                    Finance &amp; Economics
+                  </h3>
+                  <ul class="course-list">
+                    <li class="course-item">Economic Law</li>
+                    <li class="course-item">Introductory to World Economy</li>
+                    <li class="course-item">Political Economics</li>
+                    <li class="course-item">Microeconomics</li>
+                    <li class="course-item">Macroeconomics</li>
+                    <li class="course-item">Accounting</li>
+                    <li class="course-item">Management</li>
+                    <li class="course-item">Money and Banking</li>
+                    <li class="course-item">Financial Mathematics</li>
+                    <li class="course-item">Econometrics</li>
+                    <li class="course-item">Financial Engineering</li>
+                    <li class="course-item">High-Frequency Trading</li>
+                    <li class="course-item">Quantitative Investment Analysis</li>
+                    <li class="course-item">Corpus-based Analysis and Training in Finance</li>
+                  </ul>
+                </section>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-view" id="journal" aria-label="Journal" data-title="Journal" hidden>
+        <div class="page-content"></div>
+      </section>
+
+      <section
+        class="page-view"
+        id="contact"
+        aria-labelledby="contact-title"
+        data-title="Contact"
+        hidden
+      >
+        <div class="page-content contact-content">
+          <div class="contact-card">
+            <h1 class="contact-title" id="contact-title">Get in Touch with Me</h1>
+            <p class="contact-via">via</p>
+            <a class="contact-email" href="mailto:Yuyao.Huang2027@outlook.com">
+              Yuyao.Huang2027@outlook.com
+            </a>
+            <p class="contact-note">Usually respond within 24 hours</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
