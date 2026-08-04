@@ -1,8 +1,11 @@
 const navigationLinks = document.querySelectorAll(".nav-link");
 const resumeNavigationLinks = document.querySelectorAll(".resume-nav-link");
 const resumeSections = document.querySelectorAll(".resume-section");
+const aboutNavigationLinks = document.querySelectorAll(".about-nav-link");
+const aboutSections = document.querySelectorAll(".about-module");
 const pageViews = document.querySelectorAll(".page-view");
 const resumeView = document.getElementById("resume");
+const aboutView = document.getElementById("about");
 const fallbackPage = "home";
 const availablePages = new Set(
   Array.from(pageViews, (view) => view.id)
@@ -11,8 +14,8 @@ const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
 
-const setActiveResumeSection = (sectionId) => {
-  resumeNavigationLinks.forEach((link) => {
+const setActiveSection = (links, sectionId) => {
+  links.forEach((link) => {
     const isCurrentSection = link.dataset.section === sectionId;
 
     link.classList.toggle("is-active", isCurrentSection);
@@ -23,6 +26,14 @@ const setActiveResumeSection = (sectionId) => {
       link.removeAttribute("aria-current");
     }
   });
+};
+
+const setActiveResumeSection = (sectionId) => {
+  setActiveSection(resumeNavigationLinks, sectionId);
+};
+
+const setActiveAboutSection = (sectionId) => {
+  setActiveSection(aboutNavigationLinks, sectionId);
 };
 
 const showPage = () => {
@@ -53,22 +64,28 @@ const showPage = () => {
   setActiveResumeSection(
     currentPage === "resume" ? requestedSection : null
   );
+  setActiveAboutSection(
+    currentPage === "about" ? requestedSection : null
+  );
 
   document.body.dataset.page = currentPage;
 
   const activeView = document.getElementById(currentPage);
-  document.title = `${activeView.dataset.title} | Personal Page`;
+  document.title =
+    currentPage === "home"
+      ? "Yuyao Huang"
+      : `${activeView.dataset.title} | Yuyao Huang`;
 
   const requestedTarget = requestedSection
     ? document.getElementById(requestedSection)
     : null;
-  const isResumeTarget =
-    currentPage === "resume" &&
+  const isSectionTarget =
     requestedTarget &&
-    resumeView.contains(requestedTarget);
+    ((currentPage === "resume" && resumeView.contains(requestedTarget)) ||
+      (currentPage === "about" && aboutView.contains(requestedTarget)));
 
   window.requestAnimationFrame(() => {
-    if (isResumeTarget) {
+    if (isSectionTarget) {
       requestedTarget.scrollIntoView({
         behavior: prefersReducedMotion ? "auto" : "smooth",
         block: "start",
@@ -79,12 +96,20 @@ const showPage = () => {
   });
 };
 
-let resumeScrollFrame = null;
+let sectionScrollFrame = null;
 
-const updateResumeSectionFromScroll = () => {
-  resumeScrollFrame = null;
+const updateSectionFromScroll = () => {
+  sectionScrollFrame = null;
 
-  if (document.body.dataset.page !== "resume") {
+  const currentPage = document.body.dataset.page;
+  const sectionConfig =
+    currentPage === "resume"
+      ? { sections: resumeSections, setActive: setActiveResumeSection }
+      : currentPage === "about"
+        ? { sections: aboutSections, setActive: setActiveAboutSection }
+        : null;
+
+  if (!sectionConfig) {
     return;
   }
 
@@ -92,34 +117,51 @@ const updateResumeSectionFromScroll = () => {
   const headerHeight = parseFloat(
     rootStyles.getPropertyValue("--header-height")
   );
-  const resumeNavHeight = parseFloat(
-    rootStyles.getPropertyValue("--resume-nav-height")
+  const sectionNavHeight = parseFloat(
+    rootStyles.getPropertyValue(
+      currentPage === "about"
+        ? "--about-nav-height"
+        : "--resume-nav-height"
+    )
   );
-  const activationLine = headerHeight + resumeNavHeight + 24;
+  const activationLine = headerHeight + sectionNavHeight + 24;
   let activeSectionId = null;
 
-  resumeSections.forEach((section) => {
+  sectionConfig.sections.forEach((section) => {
     if (section.getBoundingClientRect().top <= activationLine) {
       activeSectionId = section.id;
     }
   });
 
+  const isAtPageBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 2;
+
+  if (isAtPageBottom && sectionConfig.sections.length) {
+    activeSectionId = sectionConfig.sections[sectionConfig.sections.length - 1].id;
+  }
+
   if (activeSectionId) {
-    setActiveResumeSection(activeSectionId);
+    sectionConfig.setActive(activeSectionId);
   }
 };
 
-const requestResumeSectionUpdate = () => {
-  if (resumeScrollFrame !== null) {
+const requestSectionUpdate = () => {
+  if (sectionScrollFrame !== null) {
     return;
   }
 
-  resumeScrollFrame = window.requestAnimationFrame(
-    updateResumeSectionFromScroll
+  sectionScrollFrame = window.requestAnimationFrame(
+    updateSectionFromScroll
   );
 };
 
-resumeNavigationLinks.forEach((link) => {
+const sectionNavigationLinks = [
+  ...resumeNavigationLinks,
+  ...aboutNavigationLinks,
+];
+
+sectionNavigationLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     if (window.location.hash !== link.getAttribute("href")) {
       return;
@@ -135,6 +177,6 @@ resumeNavigationLinks.forEach((link) => {
 });
 
 window.addEventListener("hashchange", showPage);
-window.addEventListener("scroll", requestResumeSectionUpdate, { passive: true });
-window.addEventListener("resize", requestResumeSectionUpdate);
+window.addEventListener("scroll", requestSectionUpdate, { passive: true });
+window.addEventListener("resize", requestSectionUpdate);
 showPage();
